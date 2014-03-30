@@ -101,7 +101,7 @@ body {
   border: solid 1px #BFBFBF;    
 }  
 #login_user_status {  
-    float:rightright;      
+    float:right;      
 }  
 .asset_list_header, .asset_list, .asset_details {  
     width:800px;  
@@ -204,4 +204,12 @@ body {
     background:url("../assets/file.png") no-repeat scroll left center #EFEFEF;  
     background-size: 30px;
     padding-left: 30px;
+}  
+.breadcrumbs {  
+   margin:10px 0;  
+   font-weight:bold;  
+}  
+.breadcrumbs a {  
+   color:#1D96EF;  
+   text-decoration:none;  
 }  

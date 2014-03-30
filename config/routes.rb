@@ -60,4 +60,7 @@ Filebox::Application.routes.draw do
   get ':controller(/:action(/:id(.:format)))'
   #this route is for file downloads  
   match "assets/get/:id" => "assets#get", :as => "download",via: :get 
+  match "browse/:folder_id" => "home#browse", :as => "browse" ,via: :get 
+  #for creating folders insiide another folder  
+match "browse/:folder_id/new_folder" => "folders#new", :as => "new_sub_folder" ,via: :get
 end
