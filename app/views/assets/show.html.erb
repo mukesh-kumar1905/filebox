@@ -1,8 +1,11 @@
 <% title "Asset" %>
 
 <p>
-  <strong>User:</strong>
-  <%= @asset.user_id %>
+  <strong>File:</strong>
+  <%= link_to @asset.file_name, download_url(@asset) %>    
+      <%= link_to "Show", @asset.uploaded_file.url %> 
+      <%= link_to "Edit", edit_asset_path(@asset) %>  
+      <%= link_to "Destroy", @asset, :confirm => 'Are you sure?', :method => :delete %>  
 </p>
 
 <p>

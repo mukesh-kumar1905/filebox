@@ -24,7 +24,9 @@ class AssetsController < ApplicationController
   def edit
     @asset = current_user.assets.find(params[:id])  
   end
-
+  def show
+    @asset = current_user.assets.find(params[:id])
+  end
   def update
     @asset = current_user.assets.find(params[:id])
     if @asset.update_attributes(params[:asset])
