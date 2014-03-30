@@ -29,7 +29,11 @@ gem 'jbuilder', '~> 1.2'
 
 gem "nifty-generators", :group => :development
 
+#for file upload
 gem "paperclip"
+
+#For nested folders  
+gem "acts_as_tree" 
 
 gem 'devise'
 group :doc do
