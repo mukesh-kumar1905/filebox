@@ -10,6 +10,7 @@ class HomeController < ApplicationController
   end
 	#this action is for viewing folders  
 	def browse  
+		flash.keep
 	    #get the folders owned/created by the current_user  
 	    @current_folder = current_user.folders.find(params[:folder_id])    
 	  
