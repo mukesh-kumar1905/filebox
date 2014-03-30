@@ -13,7 +13,7 @@ class FoldersController < ApplicationController
   end
 
   def create
-    @folder = current_user.folders.new(params[:folder])
+    @folder = current_user.folders.new(folder_params)
     if @folder.save
       redirect_to @folder, :notice => "Successfully created folder."
     else
@@ -44,7 +44,7 @@ class FoldersController < ApplicationController
   # Use strong_parameters for attribute whitelisting
   # Be sure to update your create() and update() controller methods.
 
-  def asset_params
+  def folder_params
     params.require(:folder).permit(:name)
   end
 end
