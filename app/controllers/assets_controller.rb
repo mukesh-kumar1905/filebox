@@ -23,12 +23,12 @@ class AssetsController < ApplicationController
   
    if @asset.folder #checking if we have a parent folder for this file  
      redirect_to browse_path(@asset.folder)  #then we redirect to the parent folder  
-   else  
-     redirect_to root_url  
+   else
+     redirect_to root_url
    end        
   else  
    render :action => 'new'  
-  end  
+  end
   end
 
   def edit
@@ -47,9 +47,17 @@ class AssetsController < ApplicationController
   end
 
   def destroy
-    @asset = current_user.assets.find(params[:id])  
-    @asset.destroy
-    redirect_to assets_url, :notice => "Successfully destroyed asset."
+  @asset = current_user.assets.find(params[:id])  
+  @parent_folder = @asset.folder #grabbing the parent folder before deleting the record  
+  @asset.destroy  
+  flash[:notice] = "Successfully deleted the file."  
+  
+  #redirect to a relevant path depending on the parent folder  
+  if @parent_folder  
+   redirect_to browse_path(@parent_folder)  
+  else  
+   redirect_to root_url  
+  end  
   end
 
   def get  
