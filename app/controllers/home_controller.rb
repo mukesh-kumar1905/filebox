@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-  	#redirect_to :new_user_session 
+  	 @assets = current_user.assets
   end
 end

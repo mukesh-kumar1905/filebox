@@ -57,4 +57,6 @@ Filebox::Application.routes.draw do
   #     resources :products
   #   end
   get ':controller(/:action(/:id(.:format)))'
+  #this route is for file downloads  
+  match "assets/get/:id" => "assets#get", :as => "download",via: :get 
 end
